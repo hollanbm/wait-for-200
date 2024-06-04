@@ -3,8 +3,8 @@
 TIMEOUT="${TIMEOUT:-600}"
 seconds=0
 
-echo 'Waiting up to' $TIMEOUT 'seconds for HTTP 200 from' $URL 
-until [ "$seconds" -gt "$TIMEOUT" ] || $(curl --output /dev/null --silent --max-time $TIMEOUT --head --fail $URL); do
+echo 'Waiting up to' $TIMEOUT 'seconds for HTTP 200 from' $URL
+until [ "$seconds" -gt "$TIMEOUT" ] || $(curl --output /dev/null --silent --max-time $TIMEOUT --fail $URL); do
   printf '.'
   sleep 5
   seconds=$((seconds+5))
